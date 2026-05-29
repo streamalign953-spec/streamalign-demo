@@ -66,7 +66,7 @@ body {
   background: #fafafa;
   color: #333;
   font-weight: 600;
-  padding: 0.45rem 0.6rem;
+  padding: 0.45rem 0.4rem;
   border-bottom: 1px solid #e5e5e5;
   text-align: center;
   white-space: nowrap;
@@ -74,7 +74,7 @@ body {
 }
 
 .audio-table tbody td {
-  padding: 0.5rem 0.6rem;
+  padding: 0.5rem 0.4rem;
   border-bottom: 1px solid #f0f0f0;
   vertical-align: middle;
   text-align: center;
@@ -105,8 +105,8 @@ body {
 
 .audio-table .sample-col {
   text-align: left;
-  min-width: 180px;
-  max-width: 220px;
+  min-width: 140px;
+  max-width: 170px;
   white-space: normal;
 }
 
@@ -145,11 +145,68 @@ body {
   color: #b15a00;
 }
 
-/* Audio element sizing */
+/* Audio element sizing (native fallback before JS enhancement) */
 .audio-table audio {
-  width: 220px;
+  width: 115px;
   height: 36px;
   vertical-align: middle;
+}
+
+/* ---------- Compact custom audio player ---------- */
+.audio-player {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  width: 115px;
+  vertical-align: middle;
+}
+
+.ap-btn {
+  flex: 0 0 auto;
+  width: 22px;
+  height: 22px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: #b15a00;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.6rem;
+  line-height: 1;
+}
+
+.ap-btn:hover { background: #934900; }
+.ap-btn:focus-visible { outline: 2px solid #b15a00; outline-offset: 1px; }
+
+.ap-bar {
+  flex: 1 1 auto;
+  min-width: 20px;
+  height: 5px;
+  background: #e3e3e3;
+  border-radius: 3px;
+  position: relative;
+  cursor: pointer;
+}
+
+.ap-fill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 0;
+  background: #b15a00;
+  border-radius: 3px;
+}
+
+.ap-time {
+  flex: 0 0 auto;
+  font-size: 0.6rem;
+  color: #666;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
 }
 
 /* ---------- Footer ---------- */
